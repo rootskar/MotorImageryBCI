@@ -25,7 +25,7 @@ class ServerProcess(object):
         self.threadpool = QtCore.QThreadPool()
 
     def run(self, tcp_ip, tcp_port, device_type, run_args, progress_callback):
-        with open('server_logs.txt', 'w') as f:
+        with open('server_logs.txt', 'a') as f:
             self.server_process = subprocess.Popen(
                 [self.PYTHON_PATH, self.CYKIT_PATH, tcp_ip, str(tcp_port), str(device_type), run_args],
                 stdout=f,
