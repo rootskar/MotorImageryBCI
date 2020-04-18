@@ -127,3 +127,11 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# local folders
+/BCI Application/pictures/
+/BCI Application/dist/
+/BCI Application/build/
+/BCI Application/main.spec
+/BCI Application/Repo-BCI.code-workspace
+/BCI Application/server_logs.txt
