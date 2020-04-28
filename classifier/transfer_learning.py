@@ -13,11 +13,12 @@ from training_testing import run_experiment
 
 """
 @input - training data (List); training labels (List); validation data (List); validation labels (List);
-        testing data (List); testing labels (List); model (Tensorflow Model object); model name (String); index of subject under evaluation (int); 
-        layer indexes ranges to disable for TL (tuple) ; optional args
+        testing data (List); testing labels (List); model (Tensorflow Model object); model name (String); 
+        index of subject under evaluation (int); layer indexes ranges to disable for TL (tuple) ; optional args
          
 Method that loads the best weights for the input model name (if it has been saved before with pretraining),
-trains the model with transfer learning approach by disabling specified layers and evaluates the model accuracy on test data.
+trains the model with transfer learning approach by disabling specified layers and evaluates the model accuracy on 
+test data.
 
 @output - Accuracy value (float); Truth values, if the prediction at index i was equal to the target label (List)
 """

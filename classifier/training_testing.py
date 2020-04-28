@@ -12,14 +12,16 @@ from tensorflow.keras.losses import binary_crossentropy
 from tensorflow.keras.optimizers import Adam
 
 """
-@input - model (Object); model name (String), training data (List); training labels (List); validation data (List); validation labels (List); 
-        testing data (List); testing labels (List); if model is using multiple branches (bool); the number of epochs to train the model (int);
-        if the model should be tested on testing data (bool).
-         
-Method that creates a new model and trains and validates it on the input data, while saving the best weights over all training epochs. 
-After training the saved weights for best validation loss are loaded and used for evaluation on test data.
+@input - model (Object); model name (String), training data (List); training labels (List); validation data (List); 
+validation labels (List); testing data (List); testing labels (List); if model is using multiple branches (bool); 
+the number of epochs to train the model (int); if the model should be tested on testing data (bool).
 
-@output - Trained model; Accuracy value (float); Truth values, if the prediction at index i was equal to the target label (List)
+Method that creates a new model and trains and validates it on the input data, while saving the best weights over 
+all training epochs. After training the saved weights for best validation loss are loaded and used for 
+evaluation on test data.
+
+@output - Trained model; Accuracy value (float); Truth values, 
+if the prediction at index i was equal to the target label (List)
 """
 
 
