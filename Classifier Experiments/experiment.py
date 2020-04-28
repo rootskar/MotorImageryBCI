@@ -2,6 +2,14 @@
 # -*- coding: utf-8 -*-
 
 
+"""
+Class for holding information about the experiment to be performed.
+Includes trial type (0 or 1), experiment type (String), list of models to evaluate, 
+nr of epochs to train the classifiers, percentage of data to use for validation and
+percentage of data to use for testing.
+"""
+
+
 class Experiment(object):
 
     def __init__(self, trial_type, exp_type, models, epochs, val_split, test_split):

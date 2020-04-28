@@ -2,6 +2,16 @@
 # -*- coding: utf-8 -*-
 
 
+"""
+Class for holding data about a given model under evaluation.
+Includes the model name (String), trial type (0 - Executed or 1 - Imagined),
+the layers to disable during transfer learning (List), the Tensorflow model object and
+if the model uses multiple branches.
+
+After the experiment has been run on the model, the data about model accuracy can be accessed.
+"""
+
+
 class Model(object):
 
     def __init__(self, model_name, trial_type, disabled_layers, model, multi_branch=False):

@@ -8,7 +8,7 @@ import numpy as np
          
 Method that predicts target values with given model and calculates the accuracy of the predicitions by mean value of correct answers.
 
-@output - Accuracy value (float), predictions (list)
+@output - Accuracy value (float), truth values (list)
 """
 
 

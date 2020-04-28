@@ -26,7 +26,7 @@ The program can be run from the CLI with the following required arguments:
 4.) What type of trials should be extracted from the data; 1 => executed trials only; 2 => imagined trials only
 5.) If CPU-only mode should be used (True / False)
 
-Example: python run_experiments.py 109 100 2 1 False True 8
+Example: python run_experiments.py 109 100 2 1 False
 """
 
 
@@ -132,41 +132,41 @@ else:
 # Perform experiments
 experiments = []
 
-# test model with subjects 1-6
+# test models with subjects 1-6
 experiment_6sub = Experiment(trial_type, '6sub', get_models(trial_type, nb_classes, samples, use_cpu), nr_of_epochs,
                              0.125, 0.2)
 experiments.append(run_experiment(X_6, y_6, experiment_6sub))
 
-# for imagined tasks test model with subjects 1-20
+# for imagined tasks test models with subjects 1-20
 if trial_type == RunType.Imagined:
     experiment_20sub = Experiment(trial_type, '20sub', get_models(trial_type, nb_classes, samples, use_cpu),
                                   nr_of_epochs, 0.125, 0.2)
     experiments.append(run_experiment(X_20, y_20, experiment_20sub))
 
-# test model with all subjects
+# test models with all subjects
 experiment_103sub = Experiment(trial_type, '103sub', get_models(trial_type, nb_classes, samples, use_cpu), nr_of_epochs,
                                0.125, 0.2)
 experiments.append(run_experiment(X, y, experiment_103sub))
 
-# test model with transfer learning
+# test models with transfer learning
 experiment_tl = Experiment(trial_type, 'tl', get_models(trial_type, nb_classes, samples, use_cpu), nr_of_epochs, 0.125,
                            0.5)
 experiments.extend(run_tl_experiment(experiment_tl, X_100, y_100, X_tl, y_tl, subj_for_training,
                                      trial_type, nb_classes, samples, use_cpu=use_cpu, pre_train=True))
 
-# Calculate modified Student's test statistics
+# Calculate Mcnemar's test statistic and p-value for all experiments
+models = ['EEGNet', 'ShallowConvNet', 'DeepConvNet']
 for experiment in experiments:
     fusion_eqs = experiment.get_model('EEGNet_fusion').get_equals()
-    print("Fusion vs EEGNet")
-    eegnet_eqs = experiment.get_model('EEGNet').get_equals()
-    mcnemar_test(fusion_eqs, eegnet_eqs)
-
-    print("Fusion vs Shallow")
-    shallow_eqs = experiment.get_model('ShallowConvNet').get_equals()
-    mcnemar_test(fusion_eqs, shallow_eqs)
-
-    print("Fusion vs Deep")
-    deep_eqs = experiment.get_model('DeepConvNet').get_equals()
-    mcnemar_test(fusion_eqs, deep_eqs)
+    eqs_list = []
+    
+    # evaluate EEGNet Fusion against the state-of-the-art models under evaluation
+    for model_name in models:
+        print("EEGNet Fusion vs {}".format(model_name))
+        model_eqs = experiment.get_model(model_name).get_equals()
+        mcnemar_test(fusion_eqs, model_eqs)
+        eqs_list.append(model_eqs)
+    
+    # save equals lists in .npz file for future analysis
     np.savez_compressed(experiment.get_exp_type() + '_' + experiment.get_trial_type().name + '_eq_values.npz',
-                        model1=fusion_eqs, model2=eegnet_eqs, model3=shallow_eqs, model4=deep_eqs)
+                        fusion=fusion_eqs, eegnet=eqs_list[0], shallow=eqs_list[1], deep=eqs_list[2])

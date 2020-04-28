@@ -13,7 +13,7 @@ from training_testing import run_experiment
 
 """
 @input - training data (List); training labels (List); validation data (List); validation labels (List);
-        testing data (List); testing labels (List); model (TF Model object); model name (String); index of subject under evaluation (int); 
+        testing data (List); testing labels (List); model (Tensorflow Model object); model name (String); index of subject under evaluation (int); 
         layer indexes ranges to disable for TL (tuple) ; optional args
          
 Method that loads the best weights for the input model name (if it has been saved before with pretraining),
@@ -60,12 +60,13 @@ def train_evaluate_transfer(X_train, y_train, X_val, y_val, X_test, y_test, mode
 
 """
 @input - Experiment object; data (List); target labels (List); TL data (List); TL labels (List); 
-         nr of subjects used for training (int); layer indexes ranges to disable for TL (tuple) ; optional args
+         nr of subjects used for training (int); trial type (0 or 1); number of classification classes (int);
+         number of data points in one sample (int); optional args;
          
 Method that runs baseline training/testing, evaluates the test subjects before transfer learning and 
 after transfer learning over the number of testing subjects
 
-@output - List of experiment objects with results
+@output - List of experiment objects with experimental results
 """
 
 
