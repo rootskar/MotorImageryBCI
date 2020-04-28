@@ -39,7 +39,6 @@ def EEGNet(nb_classes, Chans=64, Samples=128,
         pool_size2 = (1, 12)
         separable_filters = (1, 20)
 
-    ##################################################################
     input1 = Input(shape=input_shape)
     block1 = Conv2D(F1, conv_filters, padding='same',
                     input_shape=input_shape,
@@ -214,7 +213,6 @@ def EEGNet_fusion(nb_classes, Chans=64, Samples=128,
     D2 = 2
     D3 = 2
 
-    ##################################################################
     input1 = Input(shape=input_shape)
     block1 = Conv2D(F1, conv_filters, padding='same',
                     input_shape=input_shape,

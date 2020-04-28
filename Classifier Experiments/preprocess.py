@@ -8,6 +8,15 @@ import gumpy
 import numpy as np
 
 
+"""
+@input - EEG data (list); optional args
+         
+Method that applies different preprocessing techniques to the input data.
+
+@output - Preprocessed data (list)
+"""
+
+
 def preprocess_data(data, sample_rate=160, ac_freq=60, hp_freq=0.5, bp_low=2, bp_high=60, notch=False,
                     hp_filter=False, bp_filter=False, artifact_removal=False, normalize=False):
     if notch:

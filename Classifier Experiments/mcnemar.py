@@ -8,10 +8,10 @@ import statsmodels.stats.contingency_tables as sm
 @input - truth values of the predictions of the first model (List); truth values of the predictions of the second model (List)
          
 Method that calculates the contignecy table and evaluates the statistical significance of the predictions made
-by two classifiers using the McNemar's test. Prints out the test statistic and p-value of the test.
+by two classifiers using the McNemar's test. Prints out the contigency table, test statistic and p-value of the test.
 Prints out if the null hypothesis was rejected or not with the alpha value of 0.05.
 
-@output - None
+@output - Test statistic, p-value and hypothesis fail/reject result as string
 """
 
 
