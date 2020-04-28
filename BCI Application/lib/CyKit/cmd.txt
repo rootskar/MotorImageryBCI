@@ -1,2 +1,0 @@
-C:\Users\karel\AppData\Local\Programs\Python\Python36\python.exe .\CyKIT.py 127.0.0.1 5151 2 outputdata+verbose
-C:\Users\karel\AppData\Local\Programs\Python\Python36\python.exe .\CyKIT.py 127.0.0.1 5151 2 float+nocounter+generic+noheader+nobattery
