@@ -1,5 +1,5 @@
 # Motor Movement and Imagery BCI
-Brain-Computer Interface for motor movement and imagery experiments developed as Bachelor's thesis
+Brain-Computer Interface for motor movement and imagery experiments developed as Bachelor's thesis by Karel Roots
 
 # Installation and Run Instructions
 
