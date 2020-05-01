@@ -12,8 +12,7 @@ Method that predicts target values with given model and calculates the accuracy 
 """
 
 
-def predict_accuracy(model, X_test, y_test, model_name, multi_branch=False, tl=False, n=0, subj=1, kfold_n=1,
-                     train_size=0.7):
+def predict_accuracy(model, X_test, y_test, model_name, multi_branch=False, tl=False, subj=1, train_size=0.7):
     if multi_branch:
         probs = model.predict([X_test, X_test, X_test])
     else:
@@ -25,8 +24,8 @@ def predict_accuracy(model, X_test, y_test, model_name, multi_branch=False, tl=F
 
     if tl:
         print(
-            "Transfer learning classification accuracy for kfold size %d ; train_size %d ; iteration %d ; model %s ; "
-            "subject %d : %f " % (kfold_n, train_size, n, model_name, subj, acc))
+            "Transfer learning classification accuracy for  train_size %d ; iteration %d ; model %s ; "
+            "subject %d : %f " % (train_size, model_name, subj, acc))
     else:
         print("Classification accuracy for %s : %f " % (model_name, acc))
 

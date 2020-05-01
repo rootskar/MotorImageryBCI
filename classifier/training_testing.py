@@ -5,7 +5,6 @@ from glob import glob
 
 from predict import predict_accuracy
 from sklearn.model_selection import train_test_split
-from tensorflow import global_variables_initializer
 from tensorflow.keras import backend as K
 from tensorflow.keras import callbacks
 from tensorflow.keras.losses import binary_crossentropy
@@ -89,9 +88,6 @@ def run_experiment(X, y, experiment, use_cpu=False, test_model=True):
         _model = model.get_model()
         model_name = model.get_name() + '_' + experiment.get_exp_type()
         multi_branch = model.get_mb()
-
-        # make sure weights are reset before training
-        K.get_session().run(global_variables_initializer())
 
         # splitting training/testing sets
         _model, acc, equals = train_test_model(_model, model_name, X_train, y_train, X_val, y_val, X_test, y_test,

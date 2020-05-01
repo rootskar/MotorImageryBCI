@@ -12,7 +12,6 @@ from tensorflow.keras.losses import binary_crossentropy
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.utils import to_categorical
 
-
 class Classifier(object):
 
     def __init__(self, transfer_learning, run_type, subject_id, selected_model, models):
@@ -97,4 +96,4 @@ class Classifier(object):
 
             model.compile(loss=binary_crossentropy, optimizer=Adam(lr=0.001), metrics=['accuracy'])
             model.fit([X_train, X_train, X_train], y_train, batch_size=64, epochs=100,
-                      validation_data=([X_val, X_val, X_val], y_val), verbose=False, callbacks=callbacks_list)
+                    validation_data=([X_val, X_val, X_val], y_val), verbose=False, callbacks=callbacks_list)

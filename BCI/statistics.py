@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
 from file_writer import FileWriter
 import numpy as np
 
@@ -44,7 +45,7 @@ class Statistics(object):
                          self.get_left_hand_incorrect(), self.get_right_hand_incorrect(),
                          self.get_left_hand_total(), self.get_right_hand_total(),
                          self.get_total_tasks(), self.get_correct_total(),
-                         self.get_incorrect_total(), '{:.2}'.format(self.get_accuracy()),
+                         self.get_incorrect_total(), '{:.2}'.format(float(self.get_accuracy())),
                          self.get_total_time()]
         self.file_writer.save_stats(stats_to_save)
         self.save_predictions()
@@ -54,7 +55,6 @@ class Statistics(object):
 
     def save_predictions(self):
         stats_to_save = [self.model_name, self.run_type, self.transfer_learning, ','.join(map(str, self.predictions))]
-        print(stats_to_save)
         self.file_writer.save_predictions(stats_to_save)
 
     def get_run_type(self):

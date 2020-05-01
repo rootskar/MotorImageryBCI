@@ -43,7 +43,7 @@ class Models(object):
         return None
 
     def load_models(self):
-        MODELS = glob('models/' + '*.h5')
+        MODELS = glob('models/*.h5')
         FNAMES = sorted([model[model.rfind('\\') + 1:] for model in MODELS])
         for FNAME in FNAMES:
             fname = FNAME.lower()
@@ -69,8 +69,10 @@ class Models(object):
     def check_if_exists(self, model_name, model_type):
         if model_type == ModelType.Executed:
             models = self.executed_models
-        if model_type == ModelType.Imagined:
+        elif model_type == ModelType.Imagined:
             models = self.imagined_models
+        else:
+            raise AttributeError
         if any(model.get_name() == model_name for model in models):
             raise AttributeError
 

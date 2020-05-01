@@ -17,7 +17,7 @@ from run_type import RunType
 
 """
 Required dependencies: 
-Python >= 3.7, Tensorflow == 1.13.1, Numpy >= 1.18.1, scikit-learn >= 0.22, pyEDFlib >= 0.1.17
+Python == 3.6.3, Tensorflow == 1.13.1, Numpy >= 1.18.1, scikit-learn >= 0.22, pyEDFlib >= 0.1.17
 statsmodels >= 0.11.1, Gumpy (https://github.com/gumpy-bci/gumpy)
 The program can be run from the CLI with the following required arguments:
 1.) The number of subjects to be used from the dataset (int)
@@ -26,7 +26,7 @@ The program can be run from the CLI with the following required arguments:
 4.) What type of trials should be extracted from the data; 1 => executed trials only; 2 => imagined trials only
 5.) If CPU-only mode should be used (True / False)
 
-Example: python run_experiments.py 109 100 2 1 False
+Example: python run_experiments.py 109 100 2 1 True
 """
 
 
@@ -51,7 +51,7 @@ subj_for_transfer_learning = 3  # The number of subject that should be used for 
 # Loading data from files
 X, y = load_data(nr_of_subj=nr_of_subj, trial_type=trial_type, chunk_data=True, chunks=8, cpu_format=use_cpu,
                  preprocessing=True, hp_freq=0.5, bp_low=2, bp_high=60, notch=True,
-                 hp_filter=False, bp_filter=True, artifact_removal=False)
+                 hp_filter=False, bp_filter=True, artifact_removal=True)
 
 # methods for saving/loading the data to/from files
 # file_name = 'executed.npz' if trial_type == RunType.Executed else 'imagined.npz'
@@ -61,19 +61,21 @@ X, y = load_data(nr_of_subj=nr_of_subj, trial_type=trial_type, chunk_data=True, 
 # X = data['data']
 # y = data['labels']
 
-print("103-subject X shape: {}".format(X.shape))
-print("103-subject y shape: {}".format(y.shape))
-
 # Data formatting
 if use_cpu:
     print("Using CPU")
+    K.set_image_data_format('channels_last')
     samples = X.shape[1]
     X = X.reshape(X.shape[0], X.shape[1], X.shape[2], 1)
 else:
     print("Using GPU")
+    K.set_image_data_format('channels_first')
     samples = X.shape[2]
     X = X.reshape(X.shape[0], 1, X.shape[1], X.shape[2])
 y = to_categorical(y, nb_classes)
+
+print("103-subject X shape: {}".format(X.shape))
+print("103-subject y shape: {}".format(y.shape))
 
 # Extracting first 6 subject data
 trials_for_6_subjects = 6 * trials_per_subject
@@ -117,12 +119,6 @@ DIR = ['./model', './history']
 for directory in DIR:
     if not os.path.exists(directory):
         os.makedirs(directory)
-
-# Set the data format
-if use_cpu:
-    K.set_image_data_format('channels_last')
-else:
-    K.set_image_data_format('channels_first')
 
 # Perform experiments
 experiments = []

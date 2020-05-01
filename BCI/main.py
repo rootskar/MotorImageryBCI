@@ -334,11 +334,13 @@ class Ui_MainWindow(object):
         modelType = ModelType.Executed if self.runType == 0 else ModelType.Imagined
         self.modelSelectionComboboxLabel = self.createUiElement(ElementType.Label, "modelSelectionComboboxLabel",
                                                                 parent=self.statisticsWidget)
+
+        all_model_names = [model.get_name() for model in self.models.get_models(modelType)]
+        model_names = all_model_names if self.evaluateAllModels else [self.selectedModelName]
         self.modelSelectionCombobox = self.createUiElement(ElementType.ComboBox, "modelSelectionCombobox",
                                                            parent=self.statisticsWidget,
                                                            maximumSize=QtCore.QSize(160, 50),
-                                                           items=[model.get_name() for model in
-                                                                  self.models.get_models(modelType)])
+                                                           items=model_names)
         self.statisticsForm.addRow(self.modelSelectionComboboxLabel, self.modelSelectionCombobox)
         self.modelSelectionCombobox.currentTextChanged.connect(self.displayNewStatistics)
 

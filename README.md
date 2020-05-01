@@ -16,6 +16,9 @@ Brain-Computer Interface for motor movement and imagery experiments developed as
 2.) Run the BCI application with command: python main.py
 
 ## Running the classifier experiments
+
+First unzip the PhysioNet Motor Movement and Imagery dataset files in the classifier/data folder (otherwise the experimental data cannot be accessed)
+
 1.) In command prompt window, if you are in the BCI folder navigate back to the root folder with command: cd ../classifier
 
 2.) Otherwise navigate to the classifier folder with command: cd classifier

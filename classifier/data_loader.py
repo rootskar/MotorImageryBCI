@@ -163,7 +163,7 @@ def load_data(nr_of_subj=109, trial_type=1, chunk_data=True, chunks=4, base_fold
             if cpu_format:
                 if chunk_data:
                     # (15, 64, 8, 80) => (15, 64, 80, 8) => (15, 8, 80, 64) => (120, 80, 64)
-                    X.extend(trial_data.swapaxes(2, 3).swapaxes(1, 3).reshape((-1, 64, samples_per_chunk)))
+                    X.extend(trial_data.swapaxes(2, 3).swapaxes(1, 3).reshape((-1, samples_per_chunk, 64)))
                 else:
                     # (15, 64, 640) => (15, 640, 64)
                     X.extend(trial_data.swapaxes(1, 2))

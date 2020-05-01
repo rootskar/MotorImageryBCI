@@ -4,7 +4,6 @@ from EEGModels import get_models
 from experiment import Experiment
 from predict import predict_accuracy
 from sklearn.model_selection import train_test_split
-from tensorflow import global_variables_initializer
 from tensorflow.keras import backend as K
 from tensorflow.keras import callbacks
 from tensorflow.keras.losses import binary_crossentropy
@@ -25,7 +24,7 @@ test data.
 
 
 def train_evaluate_transfer(X_train, y_train, X_val, y_val, X_test, y_test, model, model_name, subj, disabled_layers,
-                            multi_branch=False, n=0, kfold_n=2, train_size=0.75, nr_of_epochs=100):
+                            multi_branch=False, train_size=0.75, nr_of_epochs=100):
     # load the model with best weights from pretraining
     model.load_weights('./model/' + str(model_name) + '_100sub_best.h5')
 
@@ -55,8 +54,8 @@ def train_evaluate_transfer(X_train, y_train, X_val, y_val, X_test, y_test, mode
 
     # Test the model
     model.load_weights(tl_model_name)
-    return predict_accuracy(model, X_test, y_test, tl_model_name, multi_branch=multi_branch, tl=True, n=n + 1,
-                            subj=subj, kfold_n=kfold_n, train_size=train_size)
+    return predict_accuracy(model, X_test, y_test, tl_model_name, multi_branch=multi_branch, tl=True,
+                            subj=subj, train_size=train_size)
 
 
 """
@@ -72,7 +71,7 @@ after transfer learning over the number of testing subjects
 
 
 def run_tl_experiment(experiment, X, y, X_tl, y_tl, subj_for_training, trial_type, nb_classes, samples,
-                      use_cpu=False, test_size=0.25, pre_train=False):
+                      use_cpu=False, pre_train=False):
     # Set the data format
     if use_cpu:
         K.set_image_data_format('channels_last')
@@ -98,7 +97,7 @@ def run_tl_experiment(experiment, X, y, X_tl, y_tl, subj_for_training, trial_typ
             model_name = model.get_name()
             subj_nr = subj_for_training + i + 1
             _model.load_weights('./model/' + str(model_name) + '_100sub_best.h5')
-            acc, equals = predict_accuracy(_model, X_tl[i], y_tl[i], model_name, tl=True, n=0, subj=subj_nr,
+            acc, equals = predict_accuracy(_model, X_tl[i], y_tl[i], model_name, tl=True, subj=subj_nr,
                                            train_size=0, multi_branch=model.get_mb())
             model.set_accuracy(acc)
             model.set_equals(equals)
@@ -113,9 +112,6 @@ def run_tl_experiment(experiment, X, y, X_tl, y_tl, subj_for_training, trial_typ
         for model in experiment_post_tl.get_models().values():
             _model = model.get_model()
             model_name = model.get_name()
-
-            # make sure weights are reset before training
-            K.get_session().run(global_variables_initializer())
 
             # training/validation/test set split
             X_train_test, X_val, y_train_test, y_val = train_test_split(X_tl[i], y_tl[i],
