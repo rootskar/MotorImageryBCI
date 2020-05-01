@@ -10,13 +10,16 @@ Brain-Computer Interface for motor movement and imagery experiments developed as
 
 3.) Activate the virtual environment with command: venv\Scripts\activate.bat
 
-## Running the application
+## Running the BCI application
 1.) While still in the same command prompt window from the previous step move to the "BCI" folder with command: cd BCI
 
 2.) Run the BCI application with command: python main.py
 
 ## Running the classifier experiments
-1.) If you are in the BCI folder navigate back to the root folder with command: cd ../classifier
+
+First unzip the PhysioNet Motor Movement and Imagery dataset files in the classifier/data folder (otherwise the experimental data cannot be accessed)
+
+1.) In command prompt window, if you are in the BCI folder navigate back to the root folder with command: cd ../classifier
 
 2.) Otherwise navigate to the classifier folder with command: cd classifier
 
