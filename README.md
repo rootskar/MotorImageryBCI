@@ -25,7 +25,7 @@ First unzip the PhysioNet Motor Movement and Imagery dataset files in the classi
 
 3.) Run the classifier experiments with command: python run_experiments.py 109 100 2 1 True
 
-# Classifier experiments options
+## Classifier experiments options
 The classifier experiments have to be run with 5 required arguments in the following order:
 
 1.) The number of subjects to be used from the dataset (integer)
