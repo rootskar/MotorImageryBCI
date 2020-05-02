@@ -140,7 +140,7 @@ experiment_103sub = Experiment(trial_type, '103sub', get_models(trial_type, nb_c
 experiments.append(run_experiment(X, y, experiment_103sub))
 
 # test models with transfer learning
-experiment_tl = Experiment(trial_type, 'tl', get_models(trial_type, nb_classes, samples, use_cpu), nr_of_epochs, 0.125,
+experiment_tl = Experiment(trial_type, 'tl', get_models(trial_type, nb_classes, samples, use_cpu), nr_of_epochs, 0.1,
                            0.5)
 experiments.extend(run_tl_experiment(experiment_tl, X_100, y_100, X_tl, y_tl, subj_for_training,
                                      trial_type, nb_classes, samples, use_cpu=use_cpu, pre_train=True))
