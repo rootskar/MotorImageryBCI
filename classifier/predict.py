@@ -24,7 +24,7 @@ def predict_accuracy(model, X_test, y_test, model_name, multi_branch=False, tl=F
 
     if tl:
         print(
-            "Transfer learning classification accuracy for  train_size %d ; iteration %d ; model %s ; "
+            "Transfer learning classification accuracy for  train_size %d ; model %s ; "
             "subject %d : %f " % (train_size, model_name, subj, acc))
     else:
         print("Classification accuracy for %s : %f " % (model_name, acc))
