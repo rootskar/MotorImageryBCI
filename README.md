@@ -7,7 +7,15 @@ Brain-Computer Interface for motor movement and imagery experiments developed as
 
 2.) Dependencies installed separately or using the virtual environment provided with the repo: 
 
-Python 3.7.7, Tensorflow 2.1.0, PyQT5 5.9.2, SciKit-learn 0.22.1, SciPy 1.4.1, Numpy 1.18.1, mlxtend 0.17.2, statsmodels 0.11.1, pyEDFlib 0.1.17
+* Python 3.7.7
+* Tensorflow 2.1.0
+* PyQT5 5.9.2
+* SciKit-learn 0.22.1
+* SciPy 1.4.1
+* Numpy 1.18.1
+* mlxtend 0.17.2
+* statsmodels 0.11.1
+* pyEDFlib 0.1.17
 
 # Installation and Run Instructions
 
