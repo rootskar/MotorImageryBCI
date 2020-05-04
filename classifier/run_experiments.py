@@ -17,7 +17,7 @@ from run_type import RunType
 
 """
 Required dependencies: 
-Python == 3.6.3, Tensorflow == 1.13.1, Numpy >= 1.18.1, scikit-learn >= 0.22, pyEDFlib >= 0.1.17
+Python == 3.7.7, Tensorflow == 2.1.0, Numpy >= 1.18.1, scikit-learn >= 0.22.1, pyEDFlib >= 0.1.17
 statsmodels >= 0.11.1, Gumpy (https://github.com/gumpy-bci/gumpy)
 The program can be run from the CLI with the following required arguments:
 1.) The number of subjects to be used from the dataset (int)
