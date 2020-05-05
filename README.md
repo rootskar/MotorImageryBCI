@@ -3,11 +3,10 @@ Brain-Computer Interface for motor movement and imagery experiments developed as
 
 # Requirements
 
-1.) Windows 10 or Linux
+1.) Windows 10 or Linux with Python 3.7.7
 
 2.) Dependencies installed separately or using the virtual environment provided with the repo: 
 
-* Python 3.7.7
 * Tensorflow 2.1.0
 * PyQT5 5.9.2
 * SciKit-learn 0.22.1
