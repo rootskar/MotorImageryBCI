@@ -3,7 +3,7 @@ Brain-Computer Interface for motor movement and imagery experiments developed as
 
 # Requirements
 
-1.) Windows 10 or Linux with Python 3.7.7
+1.) Windows 10 or Linux with 64-bit Python version 3.7.7
 
 2.) Dependencies installed separately or using the virtual environment provided with the repo: 
 
@@ -52,7 +52,7 @@ The classifier experiments have to be run with 5 required arguments in the follo
 5.) If CPU-only mode should be used (True / False). Note that for GPU mode you will need to have CUDA installed.
 
 ## Running in Linux enviroment
-Requirements: Python 3.7.7
+Requirements: 64-bit Python 3.7.7
 
 If you want to run the progams in Linux environment you will first have to create a virtual environment for Linux.
 
