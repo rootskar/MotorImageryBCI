@@ -3,7 +3,7 @@ Brain-Computer Interface for motor movement and imagery experiments developed as
 
 # Requirements
 
-1.) Windows 10 or Linux with 64-bit Python version 3.7.7 with pip.
+1.) Windows 10 or Linux (only classifier experiments) with 64-bit Python version 3.7.7 with pip.
 
 2.) To run experiments with the BCI application Emotiv EPOC 2014 device (https://www.emotiv.com/files/Emotiv-EPOC-Product-Sheet-2014.pdf) is required.
 
@@ -117,17 +117,7 @@ However in case the install script does not work you can try installing manually
 
 ## Running BCI application in Linux:
 
-1.) Navigate to the BCI folder with: cd BCI
-
-2.) Run the application with: ./run.sh
-
-If the run.sh script does not work you can try to run the application manually with the following steps:
-
-1.) In the project root folder activate virtual environment with command: source env/bin/activate
-
-2.) Navigate to the BCI folder with command: cd BCI
-
-3.) Run BCI app with command: python3 main.py
+The BCI application is not supported in Linux environment due to the latest version of CyKIT EEG streaming library not being supported in Linux.
 
 ## Running the classifier experiments in Linux:
 
