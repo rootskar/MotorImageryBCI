@@ -97,7 +97,7 @@ The classifier experiments have to be run with 5 required arguments in the follo
 5.) If CPU-only mode should be used (True / False). Note that for GPU mode you will need to have CUDA installed.
 
 # Running the experiments in Linux environment
-Requirements: 64-bit Python 3.7.7 (sudo apt-get install python3.7), python3-venv (sudo apt-get install python3-venv python3.7-venv) and pip version > 19 (python3.7 -m pip install --upgrade pip)
+Requirements: 64-bit Python 3.7.7 (sudo apt-get install python3.7), python3-venv (sudo apt-get install python3-venv python3.7-venv), python3.7-dev (sudo apt-get install python3.7-dev) and pip version > 19 (python3.7 -m pip install --upgrade pip)
 
 If you want to run the classifier experiments in Linux environment you will first have to create a virtual environment for Linux.
 
