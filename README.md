@@ -3,7 +3,7 @@ Brain-Computer Interface for motor movement and imagery experiments developed as
 
 # Requirements
 
-1.) Windows 10 or Linux with 64-bit Python version 3.7.7
+1.) Windows 10 or Linux with 64-bit Python version 3.7.7 with pip
 
 2.) Dependencies installed separately or using the virtual environment provided with the repo: 
 
@@ -16,27 +16,52 @@ Brain-Computer Interface for motor movement and imagery experiments developed as
 * statsmodels 0.11.1
 * pyEDFlib 0.1.17
 
-# Installation and Run Instructions
+# Installation Instructions
 
-## Activate virtual environment
+For Windows you can try running "install.bat" file in the project root folder.
+
+However, if this doesn't work you can try creating the virtual environment manually with the following steps:
+
+## Create new virtual environment
 1.) In Windows open up command prompt (cmd.exe)
 
 2.) Navigate to the project folder with command: cd /path/to/project
 
-3.) Activate the virtual environment with command: venv\Scripts\activate.bat
+3.) Create the virtual environment with command: python -m venv venv
 
-## Running the BCI application
-1.) While still in the same command prompt window from the previous step move to the "BCI" folder with command: cd BCI
+4.) Activate the virtual environment with command: venv\Scripts\activate.bat
 
-2.) Run the BCI application with command: python main.py
+5.) Install the requirements with command: pip install -r requirements.txt
 
-## Running the classifier experiments
+6.) Install pyEDFlib (needs to be installed separately) with command: pip install pyedflib==0.1.17
 
-1.) In command prompt window, if you are in the BCI folder navigate back to the root folder with command: cd ../classifier
+NB! After virtual environment is installed you need to activate the virtual environment every time you open a new command prompt window and want to run the BCI application or the classifier experiments.
 
-2.) Otherwise navigate to the classifier folder with command: cd classifier
+# Running the BCI application
+1.) You can run the application by running the "run.bat" file in the project-root/BCI folder
 
-3.) Run the classifier experiments with command: python run_experiments.py 109 100 2 1 True
+If the run.bat method does not work you try manually by following the steps:
+
+1.) Open up command prompt and navigate to the project root folder with command: cd /path-to-project/
+
+2.) Activate the virtual environment with command: venv\Scripts\activate.bat
+
+3.) Navigate to the BCI folder with command: cd BCI
+
+4.) Run the BCI application with command: python main.py
+
+# Running the classifier experiments
+1.) You can run the application by running the "run.bat" file in the project-root/classifier folder
+
+If the run.bat method does not work you try manually by following the steps:
+
+1.) Open up command prompt and navigate to the project root folder with command: cd /path-to-project/
+
+2.) Activate the virtual environment with command: venv\Scripts\activate.bat
+
+3.) Navigate to the BCI folder with command: cd classifier
+
+4.) Run the classifier experiments with command: python run_experiments.py 109 100 2 1 True
 
 ## Classifier experiments options
 The classifier experiments have to be run with 5 required arguments in the following order:
@@ -51,33 +76,47 @@ The classifier experiments have to be run with 5 required arguments in the follo
 
 5.) If CPU-only mode should be used (True / False). Note that for GPU mode you will need to have CUDA installed.
 
-## Running in Linux enviroment
-Requirements: 64-bit Python 3.7.7
+# Running the application in Linux environment
+Requirements: 64-bit Python 3.7.7 and python3-venv (sudo apt-get install python3-venv)
 
 If you want to run the progams in Linux environment you will first have to create a virtual environment for Linux.
 
-1.) Try running the install script: ./install.sh
+You can try running the install script: ./install.sh
 
-In case the install script does not work you can try installing manually with the following steps:
+However in case the install script does not work you can try installing manually with the following steps:
 
-1.) Create virtualenv in the project folder with command: python -m venv env (OR python3 -m venv env)
+1.) Create virtualenv in the project folder with command: python3 -m venv env
 
-2.) Activate virtual environment with command: source env\bin\activate
+2.) Activate virtual environment with command: source env/bin/activate
 
-3.) Install wheel with: pip install wheel
+3.) Install wheel with (if not installed): pip install wheel
 
-4.) Install dependencies with command: pip install -r requirements.txt
+4.) Install dependencies with command: pip install -r requirements.txt (OR "pip3 install -r requirements.txt" if running Ubuntu or Fedora)
 
 5.) Install pyedflib with command: pip install pyedflib==0.1.17
 
-After the virtualenv has been installed you can run the BCI application with the following steps:
+After the virtualenv has been installed you can start the BCI application with the following steps:
 
-1.) Navigate to the BCI folder with command: cd BCI
+1.) Navigate to the BCI folder with: cd BCI
 
-2.) Run BCI app with command: python main.py
+2.) Run the application with: ./run.sh
+
+If the run.sh script does not work you can try to run the application manually with the following steps:
+
+1.) In the project root folder activate virtual environment with command: source env/bin/activate
+
+2.) Navigate to the BCI folder with command: cd BCI
+
+3.) Run BCI app with command: python3 main.py
 
 And the classifier experiments with the following steps:
 
+1.) Navigate to the BCI folder with: cd classifier
+
+2.) Run the classifier experiments with: ./run.sh
+
+If the run.sh script does not work you can try to run the application manually with the following steps:
+
 1.) Navigate to the classifier folder with command: cd classifier
 
-2.) Run experiments with command: python run_experiments.py 109 100 2 1 True
+2.) Run experiments with command: python3 run_experiments.py 109 100 2 1 True
