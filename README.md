@@ -3,9 +3,11 @@ Brain-Computer Interface for motor movement and imagery experiments developed as
 
 # Requirements
 
-1.) Windows 10 or Linux with 64-bit Python version 3.7.7 with pip
+1.) Windows 10 or Linux with 64-bit Python version 3.7.7 with pip.
 
-2.) Dependencies installed separately or using the virtual environment provided with the repo: 
+2.) To run experiments with the BCI application Emotiv EPOC 2016 device is required.
+
+3.) Dependencies installed separately or using the virtual environment installation instructions: 
 
 * Tensorflow 2.1.0
 * PyQT5 5.9.2
@@ -49,6 +51,24 @@ If the run.bat method does not work you try manually by following the steps:
 3.) Navigate to the BCI folder with command: cd BCI
 
 4.) Run the BCI application with command: python main.py
+
+## BCI application options
+
+* Current subject ID - This should be the id of the subject performing the experiment. The ID is used to associate the subject when saving the transfer learning models and statistics
+
+* Number of tasks to perform - This is the number of tasks that will be shown to the subject during the experiment. If the number is even, the subject will be shown equal amount of left and right hand tasks.
+
+* Run type - This is the experiment type to be used during the experiment (executed or imagined tasks)
+
+* Classifier model - This is the primary classifier model used to perform predictions and to re-train the model with transfer learning
+
+* Show predictions - If this option is enabled, the user is shown the result of the prediction after each task
+
+* Enable transfer learning - If this option is enabled, the chosen model weights will be updated with transfer learning method. That means all the data collected during the experiment will be used to re-train the chosen model and the model will be saved in a separate file.
+
+* Evaluate all models - If this option is enabled, all classifier models that are loaded by the application are evaluated (in addition to the primary classifier that is chosen) and the statistics are saved for all models. If the "enable transfer learning" option is also checked, then all models are also used for transfer learning.
+
+* Enable debug mode - If this option is enabled then EEG data is randomly generated and the Emotiv EPOC device is not used. This is useful for testing the application without any device connected.
 
 # Running the classifier experiments
 You can run the classifier experiments with default options by running the "run.bat" file in the project-root/classifier folder
