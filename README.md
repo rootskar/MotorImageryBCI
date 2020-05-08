@@ -109,11 +109,11 @@ However in case the install script does not work you can try installing manually
 
 2.) Activate virtual environment with command: source env/bin/activate
 
-3.) Install wheel with (if not installed): pip install wheel
+3.) Install wheel with (if not installed): python3.7 -m pip install wheel
 
-4.) Install dependencies with command: pip install -r requirements.txt (OR "pip3 install -r requirements.txt" if running Ubuntu or Fedora)
+4.) Install dependencies with command: python3.7 -m pip install -r requirements.txt
 
-5.) Install pyedflib with command: pip install pyedflib==0.1.17 (OR "pip3 install -r requirements.txt" if running Ubuntu or Fedora)
+5.) Install pyedflib with command: python3.7 -m pip install pyedflib==0.1.17
 
 ## Running BCI application in Linux:
 
