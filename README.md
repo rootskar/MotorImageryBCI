@@ -105,7 +105,7 @@ You can try running the install script: ./install.sh
 
 However in case the install script does not work you can try installing manually with the following steps:
 
-1.) Create virtualenv in the project folder with command: python3 -m venv env
+1.) Create virtualenv in the project folder with command: python3.7 -m venv env
 
 2.) Activate virtual environment with command: source env/bin/activate
 
@@ -129,4 +129,4 @@ If the run.sh script does not work or you want to specify custom options you can
 
 1.) Navigate to the classifier folder with command: cd classifier
 
-2.) Run experiments with command: python3 run_experiments.py 109 100 2 1 True
+2.) Run experiments with command: python3.7 run_experiments.py 109 100 2 1 True
