@@ -5,7 +5,7 @@ Brain-Computer Interface for motor movement and imagery experiments developed as
 
 1.) Windows 10 or Linux with 64-bit Python version 3.7.7 with pip.
 
-2.) To run experiments with the BCI application Emotiv EPOC 2016 device is required.
+2.) To run experiments with the BCI application Emotiv EPOC 2014 device (https://www.emotiv.com/files/Emotiv-EPOC-Product-Sheet-2014.pdf) is required.
 
 3.) Dependencies installed separately or using the virtual environment installation instructions: 
 
