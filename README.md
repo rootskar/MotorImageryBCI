@@ -51,9 +51,9 @@ If the run.bat method does not work you try manually by following the steps:
 4.) Run the BCI application with command: python main.py
 
 # Running the classifier experiments
-1.) You can run the application by running the "run.bat" file in the project-root/classifier folder
+You can run the classifier experiments with default options by running the "run.bat" file in the project-root/classifier folder
 
-If the run.bat method does not work you try manually by following the steps:
+If the run.bat method does not work or you want to specify custom options you can try manually running by following the steps:
 
 1.) Open up command prompt and navigate to the project root folder with command: cd /path-to-project/
 
@@ -77,7 +77,7 @@ The classifier experiments have to be run with 5 required arguments in the follo
 5.) If CPU-only mode should be used (True / False). Note that for GPU mode you will need to have CUDA installed.
 
 # Running the application in Linux environment
-Requirements: 64-bit Python 3.7.7 and python3-venv (sudo apt-get install python3-venv)
+Requirements: 64-bit Python 3.7.7 (sudo apt-get install python3.7) and python3-venv (sudo apt-get install python3-venv python3.7-venv)
 
 If you want to run the progams in Linux environment you will first have to create a virtual environment for Linux.
 
@@ -115,7 +115,7 @@ And the classifier experiments with the following steps:
 
 2.) Run the classifier experiments with: ./run.sh
 
-If the run.sh script does not work you can try to run the application manually with the following steps:
+If the run.sh script does not work or you want to specify custom options you can try manually running by following the steps:
 
 1.) Navigate to the classifier folder with command: cd classifier
 
