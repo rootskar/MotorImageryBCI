@@ -113,9 +113,9 @@ However in case the install script does not work you can try installing manually
 
 4.) Install dependencies with command: pip install -r requirements.txt (OR "pip3 install -r requirements.txt" if running Ubuntu or Fedora)
 
-5.) Install pyedflib with command: pip install pyedflib==0.1.17
+5.) Install pyedflib with command: pip install pyedflib==0.1.17 (OR "pip3 install -r requirements.txt" if running Ubuntu or Fedora)
 
-After the virtualenv has been installed you can start the BCI application with the following steps:
+## Running BCI application in Linux:
 
 1.) Navigate to the BCI folder with: cd BCI
 
@@ -129,9 +129,9 @@ If the run.sh script does not work you can try to run the application manually w
 
 3.) Run BCI app with command: python3 main.py
 
-And the classifier experiments with the following steps:
+## Running the classifier experiments in Linux:
 
-1.) Navigate to the BCI folder with: cd classifier
+1.) Navigate to the classifier folder with: cd classifier
 
 2.) Run the classifier experiments with: ./run.sh
 
