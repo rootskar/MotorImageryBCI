@@ -83,6 +83,8 @@ If the run.bat method does not work or you want to specify custom options you ca
 
 4.) Run the classifier experiments with command: python run_experiments.py 109 100 2 1 True
 
+The output of the experiments will be written into run.log file in the same folder
+
 ## Classifier experiments options
 The classifier experiments have to be run with 5 required arguments in the following order:
 
@@ -132,3 +134,5 @@ If the run.sh script does not work or you want to specify custom options you can
 1.) Navigate to the classifier folder with command: cd classifier
 
 2.) Run experiments with command: python3.7 run_experiments.py 109 100 2 1 True
+
+The output of the experiments will be written into run.log file in the same folder
