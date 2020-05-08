@@ -3,7 +3,7 @@ Brain-Computer Interface for motor movement and imagery experiments developed as
 
 # Requirements
 
-1.) Windows 10 or Linux (only classifier experiments) with 64-bit Python version 3.7.7 with pip.
+1.) Windows 10 or Linux (only classifier experiments) with 64-bit Python version 3.7.7 with pip version > 19.
 
 2.) To run experiments with the BCI application Emotiv EPOC 2014 device (https://www.emotiv.com/files/Emotiv-EPOC-Product-Sheet-2014.pdf) is required.
 
@@ -97,7 +97,7 @@ The classifier experiments have to be run with 5 required arguments in the follo
 5.) If CPU-only mode should be used (True / False). Note that for GPU mode you will need to have CUDA installed.
 
 # Running the experiments in Linux environment
-Requirements: 64-bit Python 3.7.7 (sudo apt-get install python3.7) and python3-venv (sudo apt-get install python3-venv python3.7-venv)
+Requirements: 64-bit Python 3.7.7 (sudo apt-get install python3.7), python3-venv (sudo apt-get install python3-venv python3.7-venv) and pip version > 19 (python3.7 -m pip install --upgrade pip)
 
 If you want to run the classifier experiments in Linux environment you will first have to create a virtual environment for Linux.
 
