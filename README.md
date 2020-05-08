@@ -79,7 +79,7 @@ If the run.bat method does not work or you want to specify custom options you ca
 
 2.) Activate the virtual environment with command: venv\Scripts\activate.bat
 
-3.) Navigate to the BCI folder with command: cd classifier
+3.) Navigate to the classifier folder with command: cd classifier
 
 4.) Run the classifier experiments with command: python run_experiments.py 109 100 2 1 True
 
