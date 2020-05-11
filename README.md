@@ -119,11 +119,11 @@ However in case the install script does not work you can try installing manually
 
 6.) Install pyedflib with command: python3.7 -m pip install pyedflib==0.1.17
 
-## Running BCI application in Linux:
+## Running BCI application in Linux
 
 The BCI application is not supported in Linux environment due to the latest version of CyKIT EEG streaming library not being supported in Linux.
 
-## Running the classifier experiments in Linux:
+## Running the classifier experiments in Linux
 
 1.) Navigate to the classifier folder with: cd classifier
 
