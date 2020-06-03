@@ -1,3 +1,8 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+__author__ = "Karel Roots"
+
 from glob import glob
 
 from EEGModels import get_models

@@ -1,0 +1,24 @@
+Starting job with args:
+['run_experiments.py', '109', '100', '2', '1', 'True']
+Loaded data shapes:
+(37080, 80, 64) (37080, 1)
+Using CPU
+103-subject X shape: (37080, 80, 64, 1)
+103-subject y shape: (37080, 2)
+6-subject X shape: (2160, 80, 64, 1)
+6-subject y shape: (2160, 2)
+20-subject X shape: (7200, 80, 64, 1)
+20-subject y shape: (7200, 2)
+100-subject X shape: (36000, 80, 64, 1)
+100-subject y shape: (36000, 2)
+TL 1 subject X_train shape: (360, 80, 64, 1)
+TL 1 subject y_train shape: (360, 2)
+New model name: ./model/EEGNet_fusion_Executed_6sub_0.h5
+Classification accuracy for ./model/EEGNet_fusion_Executed_6sub_0.h5 : 0.997685 
+New model name: ./model/EEGNet_Executed_6sub_2.h5
+Classification accuracy for ./model/EEGNet_Executed_6sub_2.h5 : 0.682870 
+New model name: ./model/ShallowConvNet_Executed_6sub_4.h5
+Classification accuracy for ./model/ShallowConvNet_Executed_6sub_4.h5 : 0.995370 
+New model name: ./model/DeepConvNet_Executed_6sub_6.h5
+Classification accuracy for ./model/DeepConvNet_Executed_6sub_6.h5 : 1.000000 
+New model name: ./model/EEGNet_fusion_Executed_103sub_8.h5

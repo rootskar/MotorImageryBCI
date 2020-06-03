@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+__author__ = "Karel Roots"
+
 
 """
 Class for holding data about a given model under evaluation.
