@@ -1,5 +1,10 @@
 # Motor Movement and Imagery BCI
-Brain-Computer Interface for motor movement and imagery experiments developed as Bachelor's thesis by Karel Roots (available at https://comserv.cs.ut.ee/home/files/Roots_Informaatika_2020.pdf?study=ATILoputoo&reference=34B1E7077F9B6B256E8CFBEC244B45CE2F268A71)
+This repository contains the implementation code of Brain-Computer Interface for motor movement and imagery experiments developed as Bachelor's thesis by Karel Roots (Available at https://comserv.cs.ut.ee/home/files/Roots_Informaatika_2020.pdf?study=ATILoputoo&reference=34B1E7077F9B6B256E8CFBEC244B45CE2F268A71)
+
+Much of this work was the basis for the paper 'Karel Roots, Yar Muhammad and Naveed Muhammad, “Fusion Convolutional Neural Network for Cross-Subject EEG Motor Imagery Classification”, In Journal of Computers 2020, 9 (3), 72; Machine Learning for EEG Signal Processing, September 5, 2020.' (Available at https://www.mdpi.com/2073-431X/9/3/72)
+
+The implementation code for the paper can be found at https://github.com/rootskar/EEGMotorImagery/
+
 
 # Requirements
 
